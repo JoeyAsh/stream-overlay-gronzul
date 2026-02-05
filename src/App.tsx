@@ -1,6 +1,7 @@
 import {AnimatePresence, motion} from 'framer-motion';
 import {Timer} from 'lucide-react';
 import React, {useState} from 'react';
+import logo from './assets/Logo.png'
 
 // Farben basierend auf deinem Logo
 const colors = {
@@ -23,7 +24,7 @@ const StreamOverlay: React.FC = () => {
     };
 
     return (
-        <div className="relative w-[1920px] h-[1080px] bg-[#0a0a0a] text-white overflow-hidden font-sans">
+        <div className="fixed inset-0 bg-[#0a0a0a] text-white overflow-hidden font-sans">
 
             {/* Animierter Hintergrund-Glow */}
             <motion.div
@@ -38,7 +39,7 @@ const StreamOverlay: React.FC = () => {
 
             {/* Haupt-Rahmen (Orange Border-Effekt) */}
             <div className="absolute inset-8 border-2 border-orange-500/30 rounded-lg pointer-events-none">
-                <div className="absolute inset-0 border-[1px] border-orange-500/10 m-2"/>
+                <div className="absolute inset-0 border border-orange-500/10 m-2"/>
             </div>
 
             {/* Content-Bereich */}
@@ -58,7 +59,7 @@ const StreamOverlay: React.FC = () => {
                                 transition={{duration: 20, repeat: Infinity, ease: "linear"}}
                                 className="absolute inset-0 blur-2xl opacity-20 bg-orange-500 rounded-full"
                             />
-                            <img src="/logo.png" alt="Logo" className="w-64 h-64 relative z-10"/>
+                            <img src={logo} alt="Logo" className="w-64 h-64 relative z-10"/>
                         </div>
 
                         <h1 className="text-7xl font-black uppercase tracking-tighter italic italic-shadow">
@@ -82,8 +83,8 @@ const StreamOverlay: React.FC = () => {
                     <span className="text-orange-500">TWITCH.TV/GRONZUL</span>
                     <span className="text-orange-500">YOUTUBE.COM/@GRONZUL</span>
                 </div>
-                <div className="bg-orange-600 px-6 py-2 skew-x-[-12deg]">
-                    <span className="block skew-x-[12deg] font-bold">LATEST FOLLOWER: GAMER123</span>
+                <div className="bg-orange-600 px-6 py-2 -skew-x-12">
+                    <span className="block skew-x-12 font-bold">LATEST FOLLOWER: GAMER123</span>
                 </div>
             </div>
 
