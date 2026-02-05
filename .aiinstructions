@@ -1,0 +1,89 @@
+# Project: Twitch Stream Overlay Layout
+
+## Project Overview
+This is an animated stream overlay application for Twitch, built with React, TypeScript, Framer Motion, and TailwindCSS. It provides dynamic scenes for stream layout including start screen, ending screen, pause screen, and just chatting screen.
+
+## Core Requirements
+
+### 1. Design & Colors
+- **Primary Color**: Orange (#FF8A00)
+- **Accent Color**: Dark Orange (#FF4D00)
+- **Background**: Dark (#0F0F0F, #0a0a0a)
+- Always use these defined colors for consistency across all components
+- Logo is available at: `src/assets/Logo.png`
+
+### 2. Animation Standards
+- Use Framer Motion for all animations
+- Keep animations smooth and professional
+- Use entrance/exit animations with AnimatePresence
+- Background glow effects should pulse subtly (8s duration recommended)
+- Maintain performance - avoid heavy animations
+
+### 3. Scene Types
+The app supports four main scenes:
+- `STARTING` - Stream start screen with countdown timer
+- `PAUSE` - Pause/BRB screen
+- `ENDING` - Stream ending/thank you screen
+- `CHATTING` - Just chatting scene
+
+### 4. Component Structure
+- Main component: `src/App.tsx` (already finalized)
+- Use TypeScript with proper typing
+- Follow React best practices with functional components
+- Use Tailwind utility classes for styling
+
+### 5. Existing Elements to Preserve
+- Orange border frame effect (double border with opacity)
+- Animated background glow (pulsing orange blur)
+- Centered logo with rotating glow effect
+- Scene-based content system with AnimatePresence
+- Footer social bar (Twitch/YouTube links)
+- Latest follower display box (skewed design)
+- Scene switcher buttons (for testing, hidden in production)
+
+## Technical Stack
+- **Framework**: React 18+ with TypeScript
+- **Animation**: Framer Motion
+- **Styling**: TailwindCSS
+- **Icons**: Lucide React
+- **Build Tool**: Vite
+- **Routing**: React Router (for multiple pages/layouts)
+- **Hosting**: GitHub Pages
+
+## Deployment & Routing
+- Project is hosted on GitHub Pages
+- Use React Router for navigation between different pages/screens/layouts
+- Each overlay component (stream scenes, camera border, etc.) should be accessible via unique routes
+- Routes examples: `/`, `/camera-border`, `/starting`, `/pause`, `/ending`, `/chatting`
+- Configure router with `basename` for GitHub Pages subdirectory deployment
+- Each route can be used as a separate browser source URL in OBS
+- Use `HashRouter` or `BrowserRouter` with proper base path configuration
+
+## Coding Guidelines
+- Write TypeScript with explicit types
+- Use functional components with hooks
+- Follow existing naming conventions (PascalCase for components, camelCase for variables)
+- Keep animations performant and smooth
+- Maintain consistent spacing and layout patterns
+- Use Tailwind utility classes over custom CSS
+- Ensure responsive design principles
+
+## When Adding New Features
+- Match the existing animation style and timing
+- Use the defined color palette (orange variants)
+- Integrate with the existing scene system if applicable
+- Keep the dark, modern aesthetic
+- Test all animations for smooth transitions
+- Ensure type safety with TypeScript
+
+## File Organization
+- Components: Keep in `src/` directory
+- Assets: Store in `src/assets/`
+- Logo reference: Always use the existing Logo.png
+
+## Notes
+- App.tsx is the main component and is considered finalized
+- Any new features should complement the existing scene system
+- Maintain the current dark theme with orange accents
+- All text should be clear and readable against dark backgrounds
+- Consider OBS compatibility when adding elements
